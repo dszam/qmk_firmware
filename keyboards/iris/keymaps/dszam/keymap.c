@@ -19,8 +19,17 @@ enum custom_keycodes {
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
 
+
 #define KC_LOWR LOWER
 #define KC_RASE RAISE
+
+#define KC_ARASE MT(MOD_LALT, RAISE) // alt when hold, RAISE when tabbed
+#define KC_ALOW MT(MOD_RALT, LOWER) // alt when hold, LOWER when tabbed
+#define KC_MSPACE MT(MOD_LGUI, KC_SPC) // meta when hold, SPACE when tabbed
+#define KC_MESC MT(MOD_RGUI, KC_ESC) // meta when hold, ESC when tabbed
+#define KC_CTLZ MT(MOD_LCTL, KC_Z) // crtl when hold, Z when tabbed
+#define KC_CSLSH MT(MOD_RCTL, KC_SLSH) // crtl when hold, Z when tabbed
+
 #define KC_RST RESET
 #define KC_BL_S BL_STEP
 #define KC_DBUG DEBUG
@@ -41,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      TAB , Q  , W  , E  , R  , T  ,                Y  , U  , I  , O  , P  ,BSLS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     RASE, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
+     TILD, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, Z  , X  , C  , V  , B  ,ESC,     RASE , N  , M  ,COMM,DOT ,SLSH,RSFT,
+     LSFT, CTLZ  , X  , C  , V  , B  ,LBRC,     RBRC , N  , M  ,COMM,DOT ,CSLSH,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LALT,SPC,BSPC ,         ENT ,LGUI,LALT
+                       ARASE,MSPACE,BSPC ,         ENT ,MESC,ALOW
   //                  `----+----+----'        `----+----+----'
   ),
 
