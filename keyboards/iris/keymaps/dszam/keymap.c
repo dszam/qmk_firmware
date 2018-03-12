@@ -23,8 +23,8 @@ enum custom_keycodes {
 #define KC_LOWR LOWER
 #define KC_RASE RAISE
 
-#define KC_ARASE MT(MOD_LALT, RAISE) // alt when hold, RAISE when tabbed
-#define KC_ALOW MT(MOD_RALT, LOWER) // alt when hold, LOWER when tabbed
+#define KC_ALBRC MT(MOD_LALT, KC_LBRC) // alt when hold, RAISE when tabbed
+#define KC_ARBRC MT(MOD_RALT, KC_RBRC) // alt when hold, LOWER when tabbed
 #define KC_MSPACE MT(MOD_LGUI, KC_SPC) // meta when hold, SPACE when tabbed
 #define KC_MESC MT(MOD_RGUI, KC_ESC) // meta when hold, ESC when tabbed
 #define KC_CTLZ MT(MOD_LCTL, KC_Z) // crtl when hold, Z when tabbed
@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      TILD, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, CTLZ  , X  , C  , V  , B  ,LBRC,     RBRC , N  , M  ,COMM,DOT ,CSLSH,RSFT,
+     LSFT, CTLZ  , X  , C  , V  , B,RASE,   LOWR, N  , M  ,COMM,DOT ,CSLSH,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       ARASE,MSPACE,BSPC ,         ENT ,MESC,ALOW
+                       ALBRC,MSPACE,BSPC,     MESC, ENT, ARBRC
   //                  `----+----+----'        `----+----+----'
   ),
 
@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      DEL ,    ,LEFT,RGHT, UP ,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     BL_S,    ,    ,    ,DOWN,LCBR,LPRN,     RPRN,RCBR, P1 , P2 , P3 ,MINS,    ,
+     BL_S,    ,    ,    ,DOWN,LCBR,    ,         ,RCBR, P1 , P2 , P3 ,MINS,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                           ,    ,DEL ,         DEL ,    , P0 
+                           ,    ,DEL ,             ,    , P0 
   //                  `----+----+----'        `----+----+----'
   ),
 
