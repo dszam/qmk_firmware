@@ -25,9 +25,9 @@ enum custom_keycodes {
 
 #define KC_ALBRC MT(MOD_LALT, KC_LBRC) // alt when hold, RAISE when tabbed
 #define KC_ARBRC MT(MOD_RALT, KC_RBRC) // alt when hold, LOWER when tabbed
-#define KC_MSPACE MT(MOD_LGUI, KC_SPC) // meta when hold, SPACE when tabbed
+#define KC_MBSPC MT(MOD_LGUI, KC_BSPC) // meta when hold, SPACE when tabbed
 #define KC_MESC MT(MOD_RGUI, KC_ESC) // meta when hold, ESC when tabbed
-#define KC_CTLZ MT(MOD_LCTL, KC_Z) // crtl when hold, Z when tabbed
+#define KC_CGRV MT(MOD_LCTL, KC_GRV) // crtl when hold, Z when tabbed
 #define KC_CSLSH MT(MOD_RCTL, KC_SLSH) // crtl when hold, Z when tabbed
 
 #define KC_RST RESET
@@ -50,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      TAB , Q  , W  , E  , R  , T  ,                Y  , U  , I  , O  , P  ,BSLS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     GRV, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
+     CGRV, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, CTLZ  , X  , C  , V  , B,RASE,   LOWR, N  , M  ,COMM,DOT ,CSLSH,RSFT,
+     LSFT, Z  , X  , C  , V  , B  ,RASE,     LOWR, N  , M  ,COMM,DOT ,CSLSH,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       ALBRC,MSPACE,BSPC,     ENT, MESC, ARBRC
+                       ALBRC,SPC,MBSPC,     ENT, MESC, ARBRC
   //                  `----+----+----'        `----+----+----'
   ),
 
@@ -64,9 +64,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      RST , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     DEL ,    ,LEFT,RGHT, UP ,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
+     DEL ,    ,    ,PGUP ,HOME,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     BL_S,    ,    ,    ,DOWN,LCBR,    ,         ,RCBR, P1 , P2 , P3 ,MINS,    ,
+     BL_S,    ,    ,PGDN, END,LCBR,    ,         ,RCBR, P1 , P2 , P3 ,MINS,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,DEL ,             ,    , P0 
   //                  `----+----+----'        `----+----+----'
@@ -78,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
          ,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,MPRV,MNXT,VOLU,PGUP,UNDS,               EQL ,HOME,    ,    ,    ,BSLS,
+         ,MPRV,MNXT,VOLU,    ,UNDS,               LEFT,DOWN,UP  ,RGHT,    ,BSLS,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     MUTE,MSTP,MPLY,VOLD,PGDN,MINS,    ,         ,PLUS,END ,    ,    ,    ,    ,
+     MUTE,MSTP,MPLY,VOLD,    ,MINS,    ,         ,PLUS,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,    
   //                  `----+----+----'        `----+----+----'
